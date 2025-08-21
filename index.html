@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Master</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-brain logo-icon"></i>
+                <h1 class="logo-text">Memory Match Master</h1>
+            </div>
+            <p class="subtitle">Test your memory with this exciting card matching game. Find pairs before time runs out!</p>
+        </header>
+
+        <div class="settings-panel">
+            <h3 class="settings-title"><i class="fas fa-cog"></i> Game Settings</h3>
+            <div class="settings-grid">
+                <div class="setting-group">
+                    <label for="player-name">Player Name</label>
+                    <input type="text" id="player-name" placeholder="Enter your name">
+                </div>
+                <div class="setting-group">
+                    <label for="time-limit">Time Limit (seconds)</label>
+                    <input type="number" id="time-limit" min="30" max="300" value="60">
+                </div>
+                <div class="setting-group">
+                    <label for="special-cards">Special Cards</label>
+                    <select id="special-cards">
+                        <option value="0">None</option>
+                        <option value="1" selected>1 Pair</option>
+                        <option value="2">2 Pairs</option>
+                        <option value="3">3 Pairs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sound-toggle">
+                <span>Sound Effects:</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="sound-toggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-value" id="moves">0</div>
+                    <div class="stat-label">Moves</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="timer">60</div>
+                    <div class="stat-label">Seconds</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="score">0</div>
+                    <div class="stat-label">Score</div>
+                </div>
+            </div>
+
+            <div class="difficulty-select">
+                <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="start-btn">
+                    <i class="fas fa-play"></i> Start
+                </button>
+                <button class="btn btn-secondary" id="reset-btn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+        </div>
+
+        <div class="game-board easy" id="game-board">
+            </div>
+
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+            <ul class="instructions-list">
+                <li>Click on cards to flip them and find matching pairs</li>
+                <li>Complete the game before time runs out</li>
+                <li>Special cards: 
+                    <span style="color: var(--error);">Bomb</span> (lose time), 
+                    <span style="color: var(--accent);">Clock</span> (gain time), 
+                    <span style="color: var(--warning);">Shuffle</span> (reshuffle cards)
+                </li>
+                <li>Higher difficulties have more cards and less time</li>
+                <li>You can customize game settings before starting</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="game-over-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Game Over</h2>
+            <p id="modal-message">Your time is up! Try again.</p>
+            <button class="btn btn-primary" id="modal-btn">
+                <i class="fas fa-redo"></i> Play Again
+            </button>
+        </div>
+    </div>
+
+    <audio id="flip-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-card-flip-1126.mp3" preload="auto"></audio>
+    <audio id="match-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio>
+    <audio id="bomb-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-explosion-hit-1682.mp3" preload="auto"></audio>
+    <audio id="clock-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-magic-sparkles-3001.mp3" preload="auto"></audio>
+    <audio id="shuffle-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-whoosh-1030.mp3" preload="auto"></audio>
+    <audio id="win-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio>
+    <audio id="lose-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-sad-game-over-294.mp3" preload="auto"></audio>
+    <audio id="toggle-sound-1" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-223.mp3" preload="auto"></audio>
+    <audio id="toggle-sound-2" src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-confirmation-907.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
