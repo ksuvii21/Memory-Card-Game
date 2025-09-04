@@ -1,9 +1,7 @@
 # 🃏 Memory Match Game
-## Welcome to the Memory Match Game! This is a classic card-matching game with a modern, sleek design and exciting new features, including a timer, score tracking, and special cards that add a fun twist to the gameplay.
+## Welcome to the Memory Match Game! This is a classic card-matching game with a modern, sleek design and exciting new features, including a timer, score tracking, and special cards that add a fun twist to the gameplay. <br>
 
-
-🔗 **Live at:** [https://ksuvii21.github.io](https://ksuvii21.github.io/Memory-Card-Game/)
-
+🔗 **Live at:** [https://ksuvii21.github.io](https://ksuvii21.github.io/Memory-Card-Game/) <br>
 
 ## ✨ Features
 - Customizable Difficulty: Choose between Easy, Medium, and Hard to adjust the number of cards on the board.
