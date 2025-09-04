@@ -44,9 +44,9 @@ You can easily customize the game by editing the script.js file:
 
 ## 🔗 Connect With Me
 
-- 📧 Email: k21ritikasuvi2106@gmail.com
-- 💼 LinkedIn: www.linkedin.com/in/kritika-gupta2106
-- 🚀 Github: https://github.com/ksuvii21
+- 📧 [Email](k21ritikasuvi2106@gmail.com)
+- 💼 [LinkedIn]( www.linkedin.com/in/kritika-gupta2106)
+- 🚀 [Github](https://github.com/ksuvii21)
 
 ## 🤝 Contributing
 This project is a great example of a simple, modern web application. Feel free to fork the repository and make improvements.
